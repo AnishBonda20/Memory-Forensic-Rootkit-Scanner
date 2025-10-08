@@ -21,4 +21,3 @@ Memory dumps were captured using **DumpIt** and analyzed using **Volatility** to
 
 ---
 
-### 📁 Project Structure
