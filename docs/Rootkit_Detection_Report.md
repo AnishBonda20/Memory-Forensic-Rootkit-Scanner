@@ -29,57 +29,63 @@ Traditional antivirus tools often fail to find them — therefore, this project 
 - `psutil`
 - `logging` and `datetime` (built-in)
 
+---
+
 ### Installation Steps
 
 **Step 1:** Install Python  
 Download from [python.org/downloads](https://www.python.org/downloads/)  
 ✅ Ensure “Add Python to PATH” is checked.
 
----
+
 
 **Step 2:** Install Required Packages  
 bash :
 pip install psutil
 
----
 
 **Step 3:** Install Volatality 3
 git clone https://github.com/volatilityfoundation/volatility3.git
 cd volatility3
 python3 vol.py -h
 
----
 
 Step 3.1: Download DumpIt
 Get it from Comae Technologies.
 Place it in the following path:
 RootkitScannerProject/Tools/DumpIt.exe
 
----
 
 **Step 4:** Folder Structure
-Memory-Forensic-Rootkit-Scanner/
-│
-├── src/
-│   ├── memory_capture.py           # Memory dump acquisition
-│   ├── rootkitscanner.py           # Volatility-based scanning
-│   └── rootkit_detector.py         # Rootkit signature detection
-│
-├── Tools/
-│   └── DumpIt.exe                  # Memory acquisition tool (not uploaded)
-│
-├── docs/
-│   └── Rootkit_Detection_Report.md # Full technical documentation
-│
-├── analysis/
-│   ├── pslist_output.txt           # Sample sanitized outputs
-│   └── ssdt_hooks.txt
-│
-├── .gitignore                      # Excludes dump and temp files
-└── README.md                       # Project overview
+| Folder / File             | Description                                                                     |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| `src/`                    | Contains all Python scripts for memory capture, scanning, and rootkit detection |
+| `src/memory_capture.py`   | Automates memory dump creation using DumpIt                                     |
+| `src/rootkitscanner.py`   | Runs Volatility 3 scans on captured dumps                                       |
+| `src/rootkit_detector.py` | Detects rootkits using SSDT and keyword scanning                                |
+| `Tools/`                  | External utilities like DumpIt (excluded from repo)                             |
+| `docs/`                   | Documentation and technical report in Markdown                                  |
+| `analysis/`               | Sanitized Volatility outputs and findings                                       |
+| `.gitignore`              | Prevents uploading dumps, binaries, and temp files                              |
+| `README.md`               | Main project overview with setup instructions                                   |
 
+src/
 
----
+memory_capture.py – Captures system memory using DumpIt
+
+rootkitscanner.py – Scans dump files with Volatility 3
+
+rootkit_detector.py – Detects suspicious processes
+
+Tools/ – Contains DumpIt.exe (excluded)
+
+docs/ – Markdown documentation (Rootkit_Detection_Report.md)
+
+analysis/ – Sanitized outputs from Volatility scans
+
+.gitignore – Ignores dump and large files
+
+README.md – Project summary and quick setup guide
 
 **Step 5:** Project Modules
 
