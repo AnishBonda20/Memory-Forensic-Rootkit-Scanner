@@ -35,28 +35,51 @@ Traditional antivirus tools often fail to find them — therefore, this project 
 Download from [python.org/downloads](https://www.python.org/downloads/)  
 ✅ Ensure “Add Python to PATH” is checked.
 
+---
+
 **Step 2:** Install Required Packages  
 bash :
 pip install psutil
+
+---
 
 **Step 3:** Install Volatality 3
 git clone https://github.com/volatilityfoundation/volatility3.git
 cd volatility3
 python3 vol.py -h
 
+---
+
 Step 3.1: Download DumpIt
 Get it from Comae Technologies.
 Place it in the following path:
 RootkitScannerProject/Tools/DumpIt.exe
 
+---
+
 **Step 4:** Folder Structure
-RootkitScannerProject/
+Memory-Forensic-Rootkit-Scanner/
+│
+├── src/
+│   ├── memory_capture.py           # Memory dump acquisition
+│   ├── rootkitscanner.py           # Volatility-based scanning
+│   └── rootkit_detector.py         # Rootkit signature detection
+│
 ├── Tools/
-│   └── DumpIt.exe
-├── memory_capture.py
-├── rootkitscanner.py
-├── rootkit_detector.py
-└── memory_dump_xxxxx.dmp
+│   └── DumpIt.exe                  # Memory acquisition tool (not uploaded)
+│
+├── docs/
+│   └── Rootkit_Detection_Report.md # Full technical documentation
+│
+├── analysis/
+│   ├── pslist_output.txt           # Sample sanitized outputs
+│   └── ssdt_hooks.txt
+│
+├── .gitignore                      # Excludes dump and temp files
+└── README.md                       # Project overview
+
+
+---
 
 **Step 5:** Project Modules
 
