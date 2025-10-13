@@ -44,7 +44,7 @@ git clone https://github.com/volatilityfoundation/volatility3.git
 cd volatility3
 python3 vol.py -h
 
-Step 4: Download DumpIt
+Step 3.1: Download DumpIt
 Get it from Comae Technologies.
 Place it in the following path:
 RootkitScannerProject/Tools/DumpIt.exe
